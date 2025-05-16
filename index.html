@@ -3,56 +3,82 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>HOCH CIC OPS CONSOLE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HOCH OPS CIC Dashboard</title>
   <style>
     body {
-      background-color: #0a0f1a;
-      color: #cfe8ff;
-      font-family: monospace;
       margin: 0;
-      padding: 10px;
+      background-color: #0d1117;
+      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
     }
-    h1 {
-      color: #00bfff;
-      font-size: 22px;
+    header {
+      padding: 1rem;
+      background-color: #161b22;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    .job {
-      border: 1px solid #005577;
-      padding: 12px;
-      margin-bottom: 10px;
-      border-radius: 6px;
-      background: #0f1d33;
+    .ticker {
+      background: #21262d;
+      padding: 0.5rem;
+      font-size: 0.9rem;
+      white-space: nowrap;
     }
-    .tag {
-      background: #004477;
-      color: #fff;
-      padding: 2px 6px;
-      font-size: 12px;
-      margin-right: 5px;
-      border-radius: 4px;
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
     }
-    a {
-      color: #00ccff;
+    .job-card {
+      background-color: #1f2937;
+      border: 1px solid #2f3b4a;
+      padding: 1rem;
+      border-radius: 0.5rem;
+    }
+    .status-bar {
+      margin-top: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+    }
+    .score {
+      color: #00ff95;
+    }
+    .status-flag {
+      background: #ff6f61;
+      padding: 0.2rem 0.5rem;
+      border-radius: 0.3rem;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <h1>HOCH CIC OPS CONSOLE</h1>
-  <p>Welcome to your mobile-ready live dashboard. Tap any role below to launch missions.</p>
-  <div class="job">
-    <strong>Cybersecurity Program Manager</strong><br />
-    <span class="tag">Huntsville, AL</span>
-    <span class="tag">ATS 94%</span>
-    <span class="tag">🟢 Confirmed</span><br />
-    <a href="https://example.com/job/1" target="_blank">View Job Posting</a>
+  <header>
+    <h1>HOCH OPS CIC Dashboard - Live Ops</h1>
+    <div>🔄 Syncing: <span id="sync-time">00:00:00</span></div>
+  </header>
+  <div class="ticker">
+    🔍 Searching: LinkedIn | Indeed | USAJobs | ClearanceJobs | Dice
   </div>
-  <div class="job">
-    <strong>ISSO – Missile Defense</strong><br />
-    <span class="tag">Remote</span>
-    <span class="tag">ATS 89%</span>
-    <span class="tag">🟠 Awaiting</span><br />
-    <a href="https://example.com/job/2" target="_blank">View Job Posting</a>
+  <div class="grid-container">
+    <div class="job-card">
+      <h2>Senior ISSO – JRC Integrated Systems</h2>
+      <p>Location: Huntsville, AL<br>TS/SCI | RMF | ATO | Splunk</p>
+      <div class="status-bar">
+        <div class="score">ATS Score: 89%</div>
+        <div class="status-flag">Closing Soon</div>
+      </div>
+    </div>
+    <div class="job-card">
+      <h2>Cybersecurity PM – MDA Contractor</h2>
+      <p>Location: Redstone Arsenal<br>Zero Trust | eMASS | Leadership</p>
+      <div class="status-bar">
+        <div class="score">ATS Score: 91%</div>
+        <div class="status-flag">New</div>
+      </div>
+    </div>
   </div>
 </body>
 </html>
