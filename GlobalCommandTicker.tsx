@@ -1,0 +1,1 @@
+export default function GlobalCommandTicker() { return <div className='p-4 bg-gray-800 rounded-xl'>Global Command Ticker</div>; }

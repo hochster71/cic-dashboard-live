@@ -1,0 +1,1 @@
+export default function ResumeVaultTile() { return <div className='p-4 bg-gray-800 rounded-xl'>Resume Vault Tile</div>; }
