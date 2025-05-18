@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynasec Global Command Center</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-black text-white font-mono">
+  <div class="p-6 space-y-6">
+    <h1 class="text-4xl font-extrabold text-center text-cyan-400">DYNASEC CIC COMMAND DASHBOARD – 100,000X LIVE</h1>
+
+    <!-- Metrics Overview -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+      <div class="bg-gray-800 p-4 rounded-2xl shadow-xl">
+        <h2 class="text-lg font-semibold">Contracts Won</h2>
+        <p class="text-3xl text-green-400">12</p>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-2xl shadow-xl">
+        <h2 class="text-lg font-semibold">Revenue (YTD)</h2>
+        <p class="text-3xl text-yellow-300">$152,000</p>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-2xl shadow-xl">
+        <h2 class="text-lg font-semibold">Active Clients</h2>
+        <p class="text-3xl text-blue-400">9</p>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-2xl shadow-xl">
+        <h2 class="text-lg font-semibold">AI Agents Deployed</h2>
+        <p class="text-3xl text-purple-400">10,000,000,000</p>
+      </div>
+    </div>
+
+    <!-- Division Status -->
+    <h2 class="text-2xl font-bold text-white mt-6 mb-2">Division Command Status</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="bg-gray-900 p-4 rounded-xl border-l-4 border-green-500">
+        <h3 class="text-xl font-bold">Resume Lab</h3>
+        <p>Status: Executing | Clients: 24</p>
+      </div>
+      <div class="bg-gray-900 p-4 rounded-xl border-l-4 border-yellow-400">
+        <h3 class="text-xl font-bold">Patent Division</h3>
+        <p>Status: Scaling | Inventions Filed: 32</p>
+      </div>
+      <div class="bg-gray-900 p-4 rounded-xl border-l-4 border-blue-400">
+        <h3 class="text-xl font-bold">HealthSec AI</h3>
+        <p>Status: Deploying to 12 hospitals</p>
+      </div>
+      <div class="bg-gray-900 p-4 rounded-xl border-l-4 border-red-500">
+        <h3 class="text-xl font-bold">Proposal Engine</h3>
+        <p>Status: 85 Bids Active</p>
+      </div>
+    </div>
+
+    <!-- Revenue Pulse Tracker -->
+    <h2 class="text-2xl font-bold text-white mt-6 mb-2">Live Revenue Stream</h2>
+    <div class="bg-gray-800 p-4 rounded-xl">
+      <p class="mb-1">Today’s Revenue Goal: $50,000</p>
+      <div class="w-full bg-gray-600 rounded-full h-4">
+        <div class="bg-green-400 h-4 rounded-full" style="width: 76%"></div>
+      </div>
+      <p class="mt-1 text-sm text-gray-400">Stripe + PayPal + Direct: $38,000 collected today</p>
+    </div>
+
+    <!-- Alerts + Ticker -->
+    <h2 class="text-2xl font-bold text-white mt-6 mb-2">CIC Tactical Alerts</h2>
+    <div class="bg-yellow-500 text-black p-3 rounded-xl shadow-lg">
+      [ALERT] NDA signed with OrbitalX | Stripe: $6,500 | New Client: VisionScope AI | Patent #89277 filed
+    </div>
+  </div>
+</body>
+</html>
