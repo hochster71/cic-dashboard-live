@@ -1,0 +1,12 @@
+{
+  "commander": "LCDR Michael B. Hoch",
+  "theme": "base64-dark",
+  "mission_status": "ACTIVE",
+  "repos": [
+    "ai-ops-core",
+    "dynasec-ai-agents",
+    "cic-agent-protocols",
+    "aegis-commander-interface"
+  ],
+  "ai_modules": ["aegis", "vigilant", "dominion", "vaultmesh"]
+}
