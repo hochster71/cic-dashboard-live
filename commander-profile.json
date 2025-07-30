@@ -1,0 +1,17 @@
+{
+  "rank": "Lieutenant Commander (LCDR)",
+  "callsign": "Commander",
+  "name": "Michael Bryan Hoch",
+  "service_record": {
+    "branch": "U.S. Navy",
+    "years": "31",
+    "designation": "Mustang, Cybersecurity Warfare Lead",
+    "final_command": "Missile Defense Agency, CO Springs"
+  },
+  "auth": {
+    "level": "4",
+    "clearance": "TS/SCI",
+    "token_linked": true
+  },
+  "visualization_mode": "Command Ops Terminal"
+}
