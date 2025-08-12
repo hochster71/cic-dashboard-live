@@ -1,74 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>CIC Aegis Commander Terminal</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Courier New', Courier, monospace;
-      background: #000;
-      color: #0f0;
-      height: 100%;
-      overflow: hidden;
-    }
-    .terminal {
-      padding: 24px;
-      height: 100%;
-      box-sizing: border-box;
-      overflow-y: auto;
-      border: 4px solid #0f0;
-      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAFUlEQVQYV2NkIBIwEqmOYUABBgAAH+0CBR9NbcgAAAAASUVORK5CYII=");
-      background-repeat: repeat;
-      background-size: auto;
-      box-shadow: 0 0 40px #0f0;
-    }
-    .cursor {
-      display: inline-block;
-      width: 10px;
-      background-color: #0f0;
-      animation: blink 1s steps(2, start) infinite;
-      height: 1.2em;
-      vertical-align: bottom;
-    }
-    @keyframes blink {
-      50% {
-        background-color: transparent;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECTube - Elmswell Court Tube</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #E8F5E9; color: #333; margin: 0; padding: 0; }
+        header { background: #2196F3; color: white; padding: 20px; text-align: center; }
+        .logo { font-size: 2em; font-weight: bold; color: #4CAF50; }
+        .search-bar { margin: 20px auto; width: 80%; max-width: 600px; }
+        .search-bar input { width: 70%; padding: 10px; border: 1px solid #ccc; border-radius: 4px 0 0 4px; }
+        .search-bar button { padding: 10px; background: #4CAF50; color: white; border: none; border-radius: 0 4px 4px 0; cursor: pointer; }
+        .filters { margin: 10px auto; width: 80%; text-align: center; }
+        .filters select { padding: 5px; margin: 5px; }
+        .content-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 20px; }
+        .video-card { background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px; text-align: center; }
+        .video-card img { width: 100%; height: auto; border-radius: 4px; }
+        .video-card h3 { font-size: 1em; margin: 10px 0 5px; }
+        .video-card p { font-size: 0.8em; color: #666; }
+        footer { background: #2196F3; color: white; padding: 10px; text-align: center; font-size: 0.8em; }
+    </style>
 </head>
 <body>
-  <div class="terminal" id="terminal">
-    [Aegis OS 1.0.0 - CIC Visual Uplink Engaged]<br><br>
-    > 🟢 Authenticating Commander Access... <strong>Verified</strong><br>
-    > 🔐 GitHub Repos Authorized via PAT<br>
-    > 📁 Initializing Base64 Deployment Stack...<br><br>
-
-    ┌─[DEPLOYMENT STATUS]─────────────────────────────────────────────┐<br>
-    │ ai-ops-core ..................... ✅ Created                     │<br>
-    │ dynasec-ai-agents ............... ✅ Created                     │<br>
-    │ cic-agent-protocols ............. ✅ Created                     │<br>
-    │ aegis-commander-interface ....... ✅ Created                     │<br>
-    └─────────────────────────────────────────────────────────────────┘<br><br>
-
-    ┌─[FILES INJECTED]────────────────────────────────────────────────┐<br>
-    │ index.html (Base64 Theme) ........ ✅ Injected                  │<br>
-    │ aegis.js .......................... ⏳ Awaiting Launch Approval │<br>
-    │ cic-config.json ................... ⏳ Ready                    │<br>
-    │ commander-profile.json ............ ⏳ Classified Data Prep     │<br>
-    └─────────────────────────────────────────────────────────────────┘<br><br>
-
-    > Standby for real-time telemetry activation... <span class="cursor"></span>
-  </div>
-
-  <script>
-    const terminal = document.getElementById('terminal');
-    setInterval(() => {
-      terminal.scrollTop = terminal.scrollHeight;
-    }, 600);
-  </script>
+    <header>
+        <div class="logo">ECTube <span style="font-size: 0.7em;">(Elmswell Court Tube)</span></div>
+        <p>Where Kid Wonders Flow - Born in Madison, AL at 110 Elmswell Ct</p>
+    </header>
+    
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search videos (e.g., dinosaurs for 5-year-olds)">
+        <button onclick="searchVideos()">Search</button>
+    </div>
+    
+    <div class="filters">
+        <select id="ageFilter">
+            <option value="">Age: All</option>
+            <option value="toddler">Toddler (0-3)</option>
+            <option value="preschool">Preschool (4-6)</option>
+            <option value="elementary">Elementary (7+)</option>
+        </select>
+        <select id="categoryFilter">
+            <option value="">Category: All</option>
+            <option value="education">Educational Adventures</option>
+            <option value="stories">Storytime Kingdom</option>
+            <option value="music">Music & Dance Hall</option>
+            <!-- Add more options as needed -->
+        </select>
+        <button onclick="applyFilters()">Apply Filters</button>
+    </div>
+    
+    <div class="content-grid" id="videoGrid">
+        <!-- Dummy videos -->
+        <div class="video-card">
+            <img src="https://via.placeholder.com/200x150?text=Video+1" alt="Placeholder">
+            <h3>Dinosaur Adventure</h3>
+            <p>Ages 4-6 | 5 min | Educational</p>
+        </div>
+        <div class="video-card">
+            <img src="https://via.placeholder.com/200x150?text=Video+2" alt="Placeholder">
+            <h3>Bedtime Story</h3>
+            <p>Ages 0-3 | 10 min | Stories</p>
+        </div>
+        <!-- Add more cards for demo -->
+    </div>
+    
+    <footer>
+        <p>Created by Caroline Simone Hoch &copy; 2025 | All Rights Reserved | Discuss with Caroline First</p>
+    </footer>
+    
+    <script>
+        function searchVideos() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            alert(`Searching for: ${query} (In full app, this would filter videos dynamically)`);
+            // Simulate search: In real app, fetch from database
+        }
+        
+        function applyFilters() {
+            const age = document.getElementById('ageFilter').value;
+            const category = document.getElementById('categoryFilter').value;
+            alert(`Filtering by Age: ${age || 'All'}, Category: ${category || 'All'}`);
+            // Simulate: Hide/show cards based on filters
+        }
+    </script>
 </body>
 </html>
