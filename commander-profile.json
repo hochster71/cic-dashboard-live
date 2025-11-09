@@ -9,9 +9,10 @@
     "final_command": "Missile Defense Agency, CO Springs"
   },
   "auth": {
-    "level": "4",
-    "clearance": "TS/SCI",
-    "token_linked": true
+    "level": "[REDACTED]",
+    "clearance": "[REDACTED - Stored securely per NIST SP 800-53 AC-2]",
+    "token_linked": false
   },
-  "visualization_mode": "Command Ops Terminal"
+  "visualization_mode": "Command Ops Terminal",
+  "_security_note": "Sensitive authentication and clearance data removed per NIST SP 800-53 Rev 5 AC-2 (Account Management) and IA-5 (Authenticator Management). Credentials should be stored in environment variables or secure vaults, not in source code."
 }
