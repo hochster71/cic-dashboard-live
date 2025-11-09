@@ -1,3 +1,16 @@
+/**
+ * CIC Command Center - Main Dashboard Page
+ * 
+ * Implements Next.js 13 App Router architecture
+ * https://nextjs.org/docs/app/building-your-application/routing
+ * 
+ * Uses client-side rendering for interactive components following
+ * Next.js best practices for state management
+ * https://nextjs.org/docs/app/building-your-application/rendering/client-components
+ */
+
+"use client";
+
 import { useEffect, useState } from "react";
 import StripeRevenueTile from "@/components/StripeRevenueTile";
 import ResumeVaultTile from "@/components/ResumeVaultTile";
@@ -5,8 +18,20 @@ import EmpireExpansionMap from "@/components/EmpireExpansionMap";
 import NDALegalConsole from "@/components/NDALegalConsole";
 import GlobalCommandTicker from "@/components/GlobalCommandTicker";
 
+/**
+ * CIC Command Center Dashboard Component
+ * 
+ * Implements hydration-safe rendering pattern to prevent React hydration mismatches
+ * Pattern recommended by Next.js documentation:
+ * https://nextjs.org/docs/messages/react-hydration-error
+ * 
+ * @returns {JSX.Element | null} The dashboard component or null during SSR
+ */
 export default function CICCommandCenter() {
   const [mounted, setMounted] = useState(false);
+  
+  // Prevent hydration mismatch by only rendering after client-side mount
+  // This follows React 18 concurrent rendering best practices
   useEffect(() => setMounted(true), []);
 
   if (!mounted) return null;
